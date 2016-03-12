@@ -1,0 +1,89 @@
+<div class="container" ng-controller="ConsultaNotaCtrl">
+
+    <div class="row row-content">
+
+        <ol class="breadcrumb">
+            <li><a ui-sref="app">Home</a></li>
+            <li>Consultas</li>
+            <li class="active">Consulta Nota Fiscal</li>
+        </ol>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Consulta Nota Fiscal</h3>
+            </div>
+            <div class="panel-body">
+
+                <form class="form-horizontal" ng-if="showForm">
+                    <div class="form-group">
+                        <label for="inputChaveAcesso" class="col-sm-2 control-label">Chave de Acesso</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputChaveAcesso" ng-model="nota.chave">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <no-captcha
+                            site-key="6LcBjhoTAAAAAOuELnKIQeMw3ntZj3Ke32qhMiAR"
+                            expired-callback = "expiredCallback"
+                            g-recaptcha-response = "gRecaptchaResponse"
+                            control = "captchaControl"
+                            theme = "light">
+                          </no-captcha>
+
+                          <button ng-click="captchaControl.reset()">Reset Captcha</button>
+
+                          <code ng-class="{ 'expired': expired }">
+                            {{ gRecaptchaResponse }}
+                          </code>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputChaveAcesso" class="col-sm-2 control-label">Captcha</label>
+                        <div class="col-sm-10" >
+                            <input type="text" class="form-control" id="inputCaptcha" ng-model="nota.valor">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputChaveAcesso" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10" >
+                            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-default" ng-disabled="!canSubmit" ng-click="findByChaveAcesso()">Resumida</button>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-default">Completa</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+                <div ng-if="!showForm">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <label>Id</label>
+                    </div>
+                    <div class="col-md-10">{{nota.id}}</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-2">
+                      <label>Chave de Acesso</label>
+                    </div>
+                    <div class="col-md-10">{{nota.chave}}</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-2">
+                      <label>Valor</label>
+                    </div>
+                    <div class="col-md-10">{{nota.valor}}</div>
+                  </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
