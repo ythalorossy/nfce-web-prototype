@@ -8,40 +8,47 @@
  * Controller of the gitlocalApp
  */
 angular.module('gitlocalApp')
-  .controller('ConsultaNotaCtrl', ['$scope', 'NotaFiscal', function ($scope, NotaFiscal) {
+  .controller('ConsultaNotaCtrl', ['$scope', 'NotaFiscal', 'vcRecaptchaService', function ($scope, NotaFiscal, vcRecaptchaService) {
 
-    $scope.showForm = true;
-    $scope.canSubmit = true;''
     $scope.nota = {};
 
-    $scope.gRecaptchaResponse = '';
+    $scope.captcha = null;
+    $scope.widgetId = null;
+    $scope.model = {
+        key: '6LcBjhoTAAAAAOuELnKIQeMw3ntZj3Ke32qhMiAR'
+    };
+    $scope.setWidgetId = function (widgetId) {
+        $scope.widgetId = widgetId;
+    };
+    $scope.setResponse = function (response) {
+      $scope.captcha = response;
+    };
+    $scope.cbExpiration = function() {
+        vcRecaptchaService.reload($scope.widgetId);
+        $scope.captcha = null;
+     };
 
-    $scope.$watch('gRecaptchaResponse', function (){
-      $scope.expired = false;
-      console.log('gRecaptchaResponse', $scope.captchaControl);
-      if ($scope.gRecaptchaResponse !== ''){
-        $scope.canSubmit = false;
-      }
-    });
+    $scope.submit = function () {
 
-    $scope.expiredCallback = function expiredCallback(){
-      $scope.expired = true;
-      console.log('expiredCallback', $scope.captchaControl);
+        if ($scope.captcha !== null) {
+
+          NotaFiscal.getNotas()
+            .query( {"chave" : $scope.nota.chave, "_limit" : 1 } )
+              .$promise.then(
+                function (response) {
+                  $scope.nota = response[0];
+                },
+                function (response) {
+                  console.error(response);
+                }
+              );
+
+        } else {
+            console.log('Failed validation');
+            // In case of a failed validation you need to reload the captcha
+            // because each response can be checked just once
+            vcRecaptchaService.reload($scope.widgetId);
+        }
     };
 
-    $scope.findByChaveAcesso = function () {
-
-        NotaFiscal.getNotas()
-        .query( {"chave" : $scope.nota.chave, "_limit" : 1 } )
-        .$promise.then(
-          function (response) {
-            $scope.nota = response[0];
-            $scope.showForm = false;
-          },
-          function (response) {
-            $scope.message = "Error: " + response.status + " " + response.statusText;
-            $scope.showForm = true;
-          }
-        );
-    };
 }]);

@@ -12,5 +12,17 @@
       "valor": 550,
       "ano": 15
     }
+  ],
+  "mensagens": [
+    {
+      "data": "12/11/2015",
+      "titulo": "Teste Piloto NFC-e (Nota Fiscal de Consumidor Eletrônica)",
+      "conteudo": "'Prezados,A SEFAZ/CE informa que está disponivel as URLs de Testes dos web services do Projeto Piloto da NFC-e para os contribuintes do Estado do Ceará.'"
+    },
+    {
+      "data": "24/03/2015",
+      "titulo": "COMUNICADO DA NOTA FISCAL ELETRONICA - NFE",
+      "conteudo": "'Prezado contribuinte, A partir de 01/04/2015 estará em vigor somente o leiaute versão 3.10 da NF-e, conforme Nota Técnica 2013/005. O emissor NF-e para leiaute versão 3.10 já está disponível para download para homologação (www.emissornfehom.fazenda.sp.gov.br) e produção (www.emissornfe.fazenda.sp.gov.br). Recomendamos que a instalação e homologação da nova versão seja feita o mais breve possível, evitando possíveis transtornos por uma migração de última hora. Sugerimos manter o emissor para NF-e leiaute versão 2.0 instalado para fins de consulta dos documentos fiscais emitidos neste aplicativo, dada a impossibilidade de importar as NF-e da versão 2.0 na versão 3.10 por incompatibilidade de schemas. Os cadastros básicos (produtos, clientes, transportadores e emitentes) poderão ser exportados da versão 2.0 e importados na versão 3.10. Atenciosamente, Coordenadoria da Administração Tributária - CATRI SEFAZ/CE'"
+    }
   ]
 }

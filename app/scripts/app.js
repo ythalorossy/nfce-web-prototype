@@ -10,26 +10,31 @@
  */
 angular
   .module('gitlocalApp', [
-    'ui.router',
+    'ngAnimate',
     'ngResource',
-    'noCAPTCHA'
+    'ui.router',
+    'ui.bootstrap',
+    'vcRecaptcha'
   ])
-  .config(function ($stateProvider, $urlRouterProvider, noCAPTCHAProvider) {
-
-    noCAPTCHAProvider.setSiteKey('6LcBjhoTAAAAAOuELnKIQeMw3ntZj3Ke32qhMiAR');
-    noCAPTCHAProvider.setTheme('dark');
+  .constant("baseURL", "http://192.168.3.102:3000/")
+  .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
     // route for the main page
     .state('app', {
         url:'/',
+        resolve: {
+          mensagens : function(Mensagem) {
+            return Mensagem.getMensagens().query();
+          }
+        },
         views: {
             'header': {
                 templateUrl : 'views/header.html',
             },
             'content': {
                 templateUrl : 'views/main.html',
-                controller  : 'ConsultaNotaCtrl'
+                controller  : 'MainCtrl'
             },
             'footer': {
                 templateUrl : 'views/footer.html',

@@ -14,53 +14,36 @@
             </div>
             <div class="panel-body">
 
-                <form class="form-horizontal" ng-if="showForm">
+                <form class="form-horizontal" ng-submit="submit()">
                     <div class="form-group">
                         <label for="inputChaveAcesso" class="col-sm-2 control-label">Chave de Acesso</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputChaveAcesso" ng-model="nota.chave">
+                            <input type="text" class="form-control" id="inputChaveAcesso" ng-model="nota.chave" required>
                         </div>
                     </div>
                     <div class="form-group">
+                      <label for="inputChaveAcesso" class="col-sm-2 control-label">Captcha</label>
                         <div class="col-sm-offset-2 col-sm-10">
-                          <no-captcha
-                            site-key="6LcBjhoTAAAAAOuELnKIQeMw3ntZj3Ke32qhMiAR"
-                            expired-callback = "expiredCallback"
-                            g-recaptcha-response = "gRecaptchaResponse"
-                            control = "captchaControl"
-                            theme = "light">
-                          </no-captcha>
-
-                          <button ng-click="captchaControl.reset()">Reset Captcha</button>
-
-                          <code ng-class="{ 'expired': expired }">
-                            {{ gRecaptchaResponse }}
-                          </code>
+                          <div vc-recaptcha theme="'light'" key="model.key" size="compact"
+                            on-create="setWidgetId(widgetId)"
+                            on-success="setResponse(response)"
+                            on-expire="cbExpiration()"
+                            required
+                        ></div>
                     </div>
-                    <div class="form-group">
-                        <label for="inputChaveAcesso" class="col-sm-2 control-label">Captcha</label>
-                        <div class="col-sm-10" >
-                            <input type="text" class="form-control" id="inputCaptcha" ng-model="nota.valor">
-                        </div>
-                    </div>
-
                     <div class="form-group">
                         <label for="inputChaveAcesso" class="col-sm-2 control-label"></label>
                         <div class="col-sm-10" >
                             <div class="btn-group btn-group-justified" role="group" aria-label="...">
                                 <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-default" ng-disabled="!canSubmit" ng-click="findByChaveAcesso()">Resumida</button>
-                                </div>
-                                <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-default">Completa</button>
+                                    <button type="submit" class="btn btn-default">Resumida</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </form>
 
-                <div ng-if="!showForm">
+                <div>
                   <div class="row">
                     <div class="col-md-2">
                       <label>Id</label>
