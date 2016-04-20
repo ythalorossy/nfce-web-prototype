@@ -23,6 +23,11 @@
       "data": "24/03/2015",
       "titulo": "COMUNICADO DA NOTA FISCAL ELETRONICA - NFE",
       "conteudo": "'Prezado contribuinte, A partir de 01/04/2015 estará em vigor somente o leiaute versão 3.10 da NF-e, conforme Nota Técnica 2013/005. O emissor NF-e para leiaute versão 3.10 já está disponível para download para homologação (www.emissornfehom.fazenda.sp.gov.br) e produção (www.emissornfe.fazenda.sp.gov.br). Recomendamos que a instalação e homologação da nova versão seja feita o mais breve possível, evitando possíveis transtornos por uma migração de última hora. Sugerimos manter o emissor para NF-e leiaute versão 2.0 instalado para fins de consulta dos documentos fiscais emitidos neste aplicativo, dada a impossibilidade de importar as NF-e da versão 2.0 na versão 3.10 por incompatibilidade de schemas. Os cadastros básicos (produtos, clientes, transportadores e emitentes) poderão ser exportados da versão 2.0 e importados na versão 3.10. Atenciosamente, Coordenadoria da Administração Tributária - CATRI SEFAZ/CE'"
+    },
+    {
+      "data": "21/11/2014",
+      "titulo": "PARADA PROGRAMADA DO SERVIÇO DE AUTORIZAÇÃO DE NOTAS FISCAIS ELETRÔNICAS.",
+      "conteudo": "'Prezados contribuintes e usuários do Sistema de Autorização de Notas Fiscais Eletrônicas, Comunicamos que haverá paralização do sistema de autorização de Notas Fiscais Eletrônicas - NFE no dia 23/11/2014 (Domingo), iniciando-se às 06:00h e com retorno previsto para as 10:00h do mesmo dia. Esta paralização se dará em função de uma adequação na infraestrutura de banco de dados da aplicação. Durante o período de indisponibilidade estará liberado o Sistema de Contingência da Sefaz Virtual do Rio Grande do Sul - SVC-RS. Atenciosamente, CAT/CESINF'"
     }
   ]
 }

@@ -16,7 +16,7 @@ angular
     'ui.bootstrap',
     'vcRecaptcha'
   ])
-  .constant("baseURL", "http://192.168.3.102:3000/")
+  .constant("baseURL", "http://localhost:3000/")
   .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider

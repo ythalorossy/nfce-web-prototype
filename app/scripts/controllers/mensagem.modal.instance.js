@@ -8,7 +8,7 @@
  * Controller of the gitlocalApp
  */
 angular.module('gitlocalApp')
-  .controller('ModalInstanceCtrl',['$scope', '$uibModalInstance','msgSelected', function ($scope, $uibModalInstance, msgSelected) {
+  .controller('MessagemModalInstanceCtrl',['$scope', '$uibModalInstance','msgSelected', function ($scope, $uibModalInstance, msgSelected) {
 
   $scope.mensagem = msgSelected;
 

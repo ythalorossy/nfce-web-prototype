@@ -1,32 +1,29 @@
-<header class="jumbotron">
-  <div class="container">
-    <div class="row row-header">
-      <div class="col-xs-12 col-sm-12">
-        <h1>Nota Fiscal Eletrônica ao Consumidor</h1>
-        <p class="text-justify">O projeto da Nota Fiscal de Consumidor Eletrônica (NFC-e) teve início em setembro de 2011, na 143º reunião do Conselho Nacional de Política Fazendária (CONFAZ), realizada em Manaus. Os secretários entendiam que o modelo que vinha sendo adotado para controle das operações do varejo deveria ser aprimorado para melhor atender as necessidades dos envolvidos no processo: fisco e contribuintes.</p>
+
+<div class="container">
+  <div class="row">
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row row-header">
+          <div class="col-xs-12 col-sm-12">
+            <h1>Nota Fiscal Eletrônica ao Consumidor</h1>
+            <p class="text-justify">O projeto da Nota Fiscal de Consumidor Eletrônica (NFC-e) teve início em setembro de 2011, na 143º reunião do Conselho Nacional de Política Fazendária (CONFAZ), realizada em Manaus. Os secretários entendiam que o modelo que vinha sendo adotado para controle das operações do varejo deveria ser aprimorado para melhor atender as necessidades dos envolvidos no processo: fisco e contribuintes.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</header>
-
-<button type="button" class="btn btn-default" ng-click="open('sm')">Small modal</button>
-
-<div ng-repeat="msg in mensagens" ng-click="open('sm', msg)">
-{{msg.titulo}}
-</div>
-
-<div class="panel panel-default" ng-if="false">
-    <div class="panel-heading">
-        <h3 class="panel-title">Últimas Notícias</h3>
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">Últimas Notícias</div>
+      <div class="panel-body">
+        <p>Atualize-se com as útlimas notícias do projeto NFC-e</p>
+      </div>
+      <ul class="list-group">
+        <li
+          ng-repeat="msg in mensagens"
+          ng-click="open('sm', msg)"
+          class="list-group-item">{{msg.titulo}}</li>
+      </ul>
     </div>
-    <div class="panel-body">
-      <uib-accordion close-others="oneAtATime">
-        <uib-accordion-group is-open="status.open" ng-repeat="msg in mensagens">
-          <uib-accordion-heading>
-            {{"teste"+msg.titulo}}
-            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-          </uib-accordion-heading>
-          {{msg.conteudo}}
-      </uib-accordion-group>
-    </div>
+  </div>
 </div>

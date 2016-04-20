@@ -19,7 +19,7 @@ angular.module('gitlocalApp')
         var modalInstance = $uibModal.open({
           animation: true,
           templateUrl: '../views/main.mensagem.modal.html',
-          controller: 'ModalInstanceCtrl',
+          controller: 'MessagemModalInstanceCtrl',
           size: size,
           resolve: {
             msgSelected: function () {

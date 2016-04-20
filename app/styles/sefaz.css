@@ -1,12 +1,18 @@
 body{
     z-index:0;
-    padding: 0;
 }
 
 address{
     font-size:80%;
     margin:0px;
     color:#0f0f0f;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
 .row-header {
@@ -35,25 +41,9 @@ address{
 .zero-border{
     border: 0px;
 }
-
-.navbar-inverse {
-    color: #f00;
-    background: #006400;
+.row-fluid{
+     white-space: nowrap;
 }
-
-.navbar-inverse .navbar-nav > .active > a,
-.navbar-inverse .navbar-nav > .active > a:hover,
-.navbar-inverse .navbar-nav > .active > a:focus {
-    color: #fff;
-    background: #3CB371;
-}
-
-.navbar-inverse .navbar-nav .open .dropdown-menu> li> a,
-.navbar-inverse .navbar-nav .open .dropdown-menu {
-    background-color: #006400;
-    color:#fff;
-}
-
-.navbar-inverse .navbar-nav .open .dropdown-menu> li> a:hover {
-    color:#000000;
+.row-fluid .col-lg-3{
+     display: inline-block;
 }
